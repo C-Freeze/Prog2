@@ -35,6 +35,7 @@ public class Demo1 {
 
             guess = rand.nextInt(100) + 1; // Generate a random number between 1 and 100
             System.out.printf("Guess %d is %d\n", (i + 1), guess);
+            fw.write(String.format("Guess %d is %d\n", (i + 1), guess)); // Write the guess to the file
             ; // Print the random number
 
             if (guess < min) { // If the random number is less than the min value
@@ -48,8 +49,11 @@ public class Demo1 {
 
         System.out.println("The minimum value is: " + min); // Print the min value
         System.out.println("The maximum value is: " + max); // Print the max value
+        fw.write("The minimum value is: " + min + '\n'); // Write the min value to the file
+        fw.write("The maximum value is: " + max); // Write the max value to the file
 
-        // close scanner resource
+
+        // close opened resources
         fw.close();
         input.close();
     }
