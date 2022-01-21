@@ -1,9 +1,9 @@
-import java.util.Scanner;
-
 // CFreez00IC2.java
 // Carter Freeze
 // 1/21/2022
 // Speed Trap - Based on 'In-class 2 methods speedTrap.pdf'
+
+import java.util.Scanner;
 public class CFreez00IC2 {
     public static void main(String[] args) {
         // User inputs
