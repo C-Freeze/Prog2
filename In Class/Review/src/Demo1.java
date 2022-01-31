@@ -17,7 +17,7 @@ public class Demo1 {
         String fileName = input.nextLine();
         
         File file = new File(fileName); // Create a txt file
-        FileWriter fw = new FileWriter(file); // Create a file writer
+        PrintWriter pw = new PrintWriter(file); // Create a file writer
         
         int guess; // Create a variable to hold the guess
         // Storage for the min and max values, values will be between 1 and 100
@@ -35,8 +35,7 @@ public class Demo1 {
 
             guess = rand.nextInt(100) + 1; // Generate a random number between 1 and 100
             System.out.printf("Guess %d is %d\n", (i + 1), guess);
-            fw.write(String.format("Guess %d is %d\n", (i + 1), guess)); // Write the guess to the file
-            ; // Print the random number
+            pw.println(guess);; // Write the guess to the file
 
             if (guess < min) { // If the random number is less than the min value
                 min = guess; // we have a new min value
@@ -49,12 +48,12 @@ public class Demo1 {
 
         System.out.println("The minimum value is: " + min); // Print the min value
         System.out.println("The maximum value is: " + max); // Print the max value
-        fw.write("The minimum value is: " + min + '\n'); // Write the min value to the file
-        fw.write("The maximum value is: " + max); // Write the max value to the file
+        // pw.print("The minimum value is: " + min + '\n'); // Write the min value to the file
+        // pw.print("The maximum value is: " + max); // Write the max value to the file
 
 
         // close opened resources
-        fw.close();
+        pw.close();
         input.close();
     }
 }

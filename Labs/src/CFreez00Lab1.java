@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class CFreez00Lab1 {
     public static void main(String[] args) {
+        
         // Constants
         final int NUM_MEETINGS = 46; // number of class meetings
 

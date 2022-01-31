@@ -26,10 +26,30 @@ public class Demo3 {
 
         Scanner fileScanner = new Scanner(file); // File input
 
+        int min = 100; // Initialize min and max values
+        int max = 1;
+        int count = 0; // Initialize count to 0
+
         while(fileScanner.hasNextLine()) {
             String line = fileScanner.nextLine();
-            System.out.println(line);
+            
+            int guess = Integer.parseInt(line); // Parse the line to an integer
+            //find min and max
+            if (guess < min) {
+                min = guess;
+            }
+            
+            if (guess > max) {
+                max = guess;
+            }
+            
+            count++; // Increment count
         }
+
+        // Print the min and max values
+        System.out.println("The minimum value is: " + min);
+        System.out.println("The maximum value is: " + max);
+        System.out.println("The number of guesses is: " + count);
 
         // Close resources
         fileScanner.close();
