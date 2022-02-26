@@ -72,7 +72,7 @@ public class CFRational {
         }
     }
 
-    public void reduce() {
+    public CFRational reduce() {
         // This method finds the greatest common divisor of the numerator and
         // denominator
         
@@ -84,15 +84,10 @@ public class CFRational {
             }
         }
 
-        // Set the numerator and denominator to the reduced values
-        this.numerator /= gcd;
-        this.denominator /= gcd;
+        // Create a new rational number with the reduced numerator and denominator
+        return new CFRational(this.numerator / gcd, this.denominator / gcd);
 
-        // Check to see if the denominator is negative
-        if (this.denominator < 0) {
-            this.numerator = -this.numerator;
-            this.denominator = -this.denominator;
-        }
+
     }
 
     public CFRational add(CFRational r2) {
