@@ -1,4 +1,9 @@
-public class Procedure {
+// CFProcedure.java
+// 2/21/2022
+// Carter Freeze
+// Procedure Class
+
+public class CFProcedure {
     // Class fields
 
     private String name;
@@ -7,7 +12,7 @@ public class Procedure {
     private double charge;
     
     // Constructor
-    public Procedure(String name, String date, String practitioner, double charge) {
+    public CFProcedure(String name, String date, String practitioner, double charge) {
         this.name = name;
         this.date = date;
         this.practitioner = practitioner;

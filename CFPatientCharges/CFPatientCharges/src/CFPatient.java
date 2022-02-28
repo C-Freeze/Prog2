@@ -1,4 +1,9 @@
-public class Patient {
+// CFPatient.java
+// 2/21/2022
+// Carter Freeze
+// Patient Class
+
+public class CFPatient {
     // Class args
     // Name
     private String firstName;
@@ -20,7 +25,7 @@ public class Patient {
 
     // Constructor
     // This is an abomination of code of a header
-    public Patient(String firstName, String middleName, String lastName, String address, String city, String state,
+    public CFPatient(String firstName, String middleName, String lastName, String address, String city, String state,
             int zip, String phone, String contactName, String contactPhone) {
 
         this.firstName = firstName;
@@ -68,7 +73,7 @@ public class Patient {
         return zip;
     }
 
-    public String getFormattedAddress() { //TODO: May not want the newline
+    public String getFormattedAddress() {
         return address + ", " + city + ", " + state + " " + zip;
     }
 
@@ -85,7 +90,7 @@ public class Patient {
     }
 
     // Mutators
-    // Also going to just assume all 
+    // Also going to just assume all inputs will be of correct data type
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
