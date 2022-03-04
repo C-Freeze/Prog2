@@ -18,11 +18,11 @@ public class Die {
 
     // Acessor methods
     public int getSides() {
-        return sides;
+        return this.sides;
     }
 
     public int getValue() {
-        return value;
+        return this.value;
     }
 
     // Functionality

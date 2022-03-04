@@ -1,5 +1,5 @@
 //MagicEightBall.java
-// Carter Freeze && Cooper Gray
+// Carter Freeze
 // 2/25/2022
 // This program will ask the user a question and then return a random answer
 

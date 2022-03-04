@@ -75,7 +75,7 @@ public class CFRational {
     public CFRational reduce() {
         // This method finds the greatest common divisor of the numerator and
         // denominator
-        
+
         // Find the greatest common divisor of the numerator and denominator
         int gcd = 1;
         for (int i = 2; i <= this.numerator; i++) {
@@ -86,7 +86,6 @@ public class CFRational {
 
         // Create a new rational number with the reduced numerator and denominator
         return new CFRational(this.numerator / gcd, this.denominator / gcd);
-
 
     }
 
@@ -101,7 +100,6 @@ public class CFRational {
         r3.reduce();
         return r3;
     }
-
 
     // ToString Method
     @Override
