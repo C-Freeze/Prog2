@@ -2,6 +2,7 @@
     "java.project.sourcePaths": [
         "Labs/src",
         "In Class/Review/src",
-        "CFPatientCharges/CFPatientCharges/src"
+        "CFPatientCharges/CFPatientCharges/src",
+        "Exams/src"
     ]
 }
