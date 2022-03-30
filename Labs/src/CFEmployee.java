@@ -1,14 +1,16 @@
+// CFEmployee.java
+// 3/29/2022
+// Carter Freeze
+// Base Employee Class
 import java.util.Calendar;
 import java.util.Random;
-
-// CFEmployee.java
 public class CFEmployee {
     // instance variables
     private String name;
-    private String employeeNumber; // This will be in the format XXX-L, where XXX is the employee number and L is a
+    private String employeeNumber; // This will be in the format III-L, where III is the employee number and L is a
                                    // letter (A-M)
     private String hireDate; // This will be in the format MM/DD/YYYY
-
+    
     // constructor, the lazy one
     public CFEmployee(String name, String employeeNumber, String hireDate) {
         setName(name);

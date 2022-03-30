@@ -1,4 +1,7 @@
 //ProductionWorker.java
+// 3/29/2022
+// Carter Freeze
+// Class for Production Workers
 public class CFProductionWorker extends CFEmployee {
     private int shift;
     private double hourlyPayRate;
