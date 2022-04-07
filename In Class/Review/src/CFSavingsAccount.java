@@ -1,3 +1,7 @@
+//CFSavingsAccount.java
+//Carter Freeze
+//4/7/22
+//implements the abstract account class
 public class CFSavingsAccount extends CFAbstractAccount {
     //Instance Variables
     private boolean isActive;
