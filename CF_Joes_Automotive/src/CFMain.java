@@ -11,7 +11,7 @@ public class CFMain extends JFrame {
     public CFMain() {
         super("Joe's Automotive"); // Set the window title
         JPanel mainPane = new JPanel();
-        mainPane.setLayout(new BorderLayout());
+        mainPane.setLayout(new GridLayout(1, 3));
 
         baseSetup();
         setColors(mainPane);
@@ -22,6 +22,7 @@ public class CFMain extends JFrame {
         CFRoutinePanel sp = new CFRoutinePanel(); // Routine services
         CFRepairPanel rp = new CFRepairPanel();
         CFTotalPanel tp = new CFTotalPanel(sp, rp);
+        CFTitlePanel tp2 = new CFTitlePanel(WIDTH, 20);
         JButton magicButton = new JButton("Calculate");
         magicButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -35,6 +36,7 @@ public class CFMain extends JFrame {
         mainPane.add(rp);
         mainPane.add(sp);
         mainPane.add(tp);
+        add(tp2, BorderLayout.NORTH);
         add(magicButton, BorderLayout.SOUTH);
         add(mainPane);
         setVisible(true);

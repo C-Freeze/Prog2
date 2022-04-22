@@ -16,12 +16,12 @@ public class CFTotalPanel extends JPanel{
         setBorder(border);
 
         // TextFields
-        JTextField subtotal = new JTextField();
-        JTextField tax = new JTextField();
-        JTextField total = new JTextField();
-        JLabel subtotalLabel = new JLabel("Subtotal");
-        JLabel taxLabel = new JLabel("Tax");
-        JLabel totalLabel = new JLabel("Total");
+        JTextField subtotal = new StyledTextField();
+        JTextField tax = new StyledTextField();
+        JTextField total = new StyledTextField();
+        JLabel subtotalLabel = new StyledLabel("Subtotal");
+        JLabel taxLabel = new StyledLabel("Tax");
+        JLabel totalLabel = new StyledLabel("Total");
 
         // Set up the panel
         setLayout(new GridLayout(3, 2));
@@ -55,6 +55,23 @@ public class CFTotalPanel extends JPanel{
         c.weighty = 0.0; // Set the weight of the button
         c.insets = new Insets(0, 0, 0, 0);
 
+    }
+
+    private class StyledLabel extends JLabel {
+        public StyledLabel(String text) {
+            super(text);
+            setBackground(CFColors.COLOR_BACKGROUND);
+            setForeground(CFColors.COLOR_TEXT);
+        }
+
+    }
+
+    private class StyledTextField extends JTextField {
+        public StyledTextField() {
+            super();
+            setBackground(CFColors.COLOR_BACKGROUND);
+            setForeground(CFColors.COLOR_TEXT);
+        }
     }
 
 }
