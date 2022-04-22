@@ -25,6 +25,7 @@ public class CFRoutinePanel extends JPanel {
         TitledBorder border = BorderFactory.createTitledBorder("Routine");
         border.setTitleColor(CFColors.COLOR_TEXT);
         setBorder(border);
+        setLayout(new GridLayout(8, 1));
 
         // Set up the check boxes
         oilChange = new StyledCheckBox("Oil Change", 26.00);
@@ -36,7 +37,6 @@ public class CFRoutinePanel extends JPanel {
         tireRotation = new StyledCheckBox("Tire Rotation", 20.00);
 
         // Set up the panel
-        setLayout(new GridLayout(0, 2));
         add(oilChange);
         add(lubeJob);
         add(radiatorFlush);

@@ -4,10 +4,13 @@ import javax.swing.border.TitledBorder; //Explicitly import the TitledBorder cla
 import java.awt.*;
 import java.awt.event.*;
 
+public class CFTotalPanel extends JPanel {
 
-public class CFTotalPanel extends JPanel{
+    public JTextField subtotal;
+    public JTextField tax;
+    public JTextField total;
 
-    public CFTotalPanel(CFRoutinePanel RoutineServices, CFRepairPanel repairCosts){
+    public CFTotalPanel() {
         setBackground(CFColors.COLOR_BACKGROUND);
         setForeground(CFColors.COLOR_TEXT);
         // Set up the labeled border
@@ -16,9 +19,10 @@ public class CFTotalPanel extends JPanel{
         setBorder(border);
 
         // TextFields
-        JTextField subtotal = new StyledTextField();
-        JTextField tax = new StyledTextField();
-        JTextField total = new StyledTextField();
+        subtotal = new StyledTextField();
+        tax = new StyledTextField();
+        total = new StyledTextField();
+
         JLabel subtotalLabel = new StyledLabel("Subtotal");
         JLabel taxLabel = new StyledLabel("Tax");
         JLabel totalLabel = new StyledLabel("Total");
@@ -72,6 +76,18 @@ public class CFTotalPanel extends JPanel{
             setBackground(CFColors.COLOR_BACKGROUND);
             setForeground(CFColors.COLOR_TEXT);
         }
+    }
+
+    public void setSubtotal(double d) {
+        subtotal.setText(String.format("$%.2f", d));
+    }
+
+    public void setUI(double d) {
+        tax.setText(String.format("$%.2f", d));
+    }
+
+    public void setTotal(double d) {
+        total.setText(String.format("$%.2f", d));
     }
 
 }

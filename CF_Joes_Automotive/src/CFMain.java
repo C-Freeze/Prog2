@@ -5,8 +5,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class CFMain extends JFrame {
-    public static final int WIDTH = 600;
-    public static final int HEIGHT = 200;
+    public static final int WIDTH = 700;
+    public static final int HEIGHT = 400;
 
     public CFMain() {
         super("Joe's Automotive"); // Set the window title
@@ -16,29 +16,47 @@ public class CFMain extends JFrame {
         baseSetup();
         setColors(mainPane);
         setLayout(new BorderLayout());
-        mainPane.setLayout(new GridLayout(1,3));
+        mainPane.setLayout(new GridLayout(1, 3));
         // create the subpanels
         // mainPane.add(new CFTitlePanel(WIDTH, 20), BorderLayout.NORTH);
         CFRoutinePanel sp = new CFRoutinePanel(); // Routine services
         CFRepairPanel rp = new CFRepairPanel();
-        CFTotalPanel tp = new CFTotalPanel(sp, rp);
-        CFTitlePanel tp2 = new CFTitlePanel(WIDTH, 20);
-        JButton magicButton = new JButton("Calculate");
-        magicButton.addActionListener(new ActionListener() {
+        CFTotalPanel tp = new CFTotalPanel();
+
+        JButton calcButton = new JButton("Calculate");
+        calcButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 double subTotal = sp.getServicesSubTotal() + rp.getNonRoutineSubTotal();
-                System.out.println("Subtotal: " + subTotal);
+
+                // Update the total panel
+                tp.setSubtotal(subTotal);
+                tp.setUI(subTotal * 0.06);
+                tp.setTotal(subTotal * 1.06);
             }
         });
 
-        // mainPane.add(new CFTotalPanel(), BorderLayout.SOUTH);
+        JButton exitButton = new JButton("Exit");
+        exitButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
 
         mainPane.add(rp);
         mainPane.add(sp);
         mainPane.add(tp);
-        add(tp2, BorderLayout.NORTH);
-        add(magicButton, BorderLayout.SOUTH);
-        add(mainPane);
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setBackground(CFColors.COLOR_BACKGROUND);
+        buttonPanel.add(calcButton, BorderLayout.SOUTH);
+        buttonPanel.add(exitButton, BorderLayout.SOUTH);
+
+        add(new CFTitlePanel(), BorderLayout.NORTH);
+        add(mainPane, BorderLayout.CENTER);
+        add(buttonPanel, BorderLayout.SOUTH);
+
+        
+
         setVisible(true);
     }
 

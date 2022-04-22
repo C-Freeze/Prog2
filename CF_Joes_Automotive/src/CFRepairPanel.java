@@ -1,7 +1,6 @@
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.awt.event.*;
 
 public class CFRepairPanel extends JPanel {
 
@@ -48,10 +47,15 @@ public class CFRepairPanel extends JPanel {
     }
 
     public double getNonRoutineSubTotal() {
-        double partsCost = Double.parseDouble(parts.getText());
-        double laborHours = Double.parseDouble(labor.getText());
-
-        return partsCost + (laborHours * 20.00); // Yes I am aware that this is a magic number, yes I am hardcoding it,
-                                                 // yes I am both the pricing department and the programmer
+        try {
+            
+            double partsCost = Double.parseDouble(parts.getText());
+            double laborHours = Double.parseDouble(labor.getText());
+            return partsCost + (laborHours * 20.00); // Yes I am aware that this is a magic number,
+                                                     // yes I am hardcoding it,
+                                                     // yes I am both the pricing department and the programmer
+        } catch (Exception e) {
+            return 0.0;
+        }
     }
 }
