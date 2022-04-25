@@ -1,3 +1,9 @@
+/*
+CFComponets.java
+Carter Freeze
+4/25/22
+Parts and labor
+*/
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -16,10 +22,10 @@ public class CFRepairPanel extends JPanel {
         setBorder(border);
 
         // TextFields
-        parts = new StyledTextField();
-        labor = new StyledTextField();
-        JLabel partsLabel = new StyledLabel("Parts Cost   ");
-        JLabel laborLabel = new StyledLabel("Labor Hours  ");
+        parts = new CFComponets.StyledTextField();
+        labor = new CFComponets.StyledTextField();
+        JLabel partsLabel = new CFComponets.StyledLabel("Parts Cost   ");
+        JLabel laborLabel = new CFComponets.StyledLabel("Labor Hours  ");
 
         // Set up the panel
         setLayout(new GridLayout(2, 2));
@@ -29,22 +35,7 @@ public class CFRepairPanel extends JPanel {
         add(labor);
     }
 
-    private class StyledLabel extends JLabel {
-        public StyledLabel(String text) {
-            super(text);
-            setBackground(CFColors.COLOR_BACKGROUND);
-            setForeground(CFColors.COLOR_TEXT);
-        }
 
-    }
-
-    private class StyledTextField extends JTextField {
-        public StyledTextField() {
-            super();
-            setBackground(CFColors.COLOR_BACKGROUND);
-            setForeground(CFColors.COLOR_TEXT);
-        }
-    }
 
     public double getNonRoutineSubTotal() {
         try {

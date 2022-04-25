@@ -1,5 +1,10 @@
+/*
+CFTitlePanel.java
+Carter Freeze
+4/25/22
+So simple it'll blow you mind.
+*/
 import javax.swing.*;
-import java.awt.*;
 
 public class CFTitlePanel extends JPanel {
 
@@ -8,11 +13,7 @@ public class CFTitlePanel extends JPanel {
         setForeground(CFColors.COLOR_TEXT);
 
         // Create the title label
-        JLabel title = new JLabel("Joe's Automotive");
-        title.setFont(new Font("Arial", Font.BOLD, 12));
-        title.setForeground(CFColors.COLOR_TEXT);
-        title.setBackground(CFColors.COLOR_BACKGROUND);
-
+        JLabel title = new CFComponets.StyledLabel("Joe's Automotive");
         add(title);
     }
 }

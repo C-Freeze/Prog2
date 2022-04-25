@@ -1,8 +1,13 @@
+/*
+CFTotalPanel.java
+Carter Freeze
+4/25/22
+The total panel, shows calculations 
+*/
+
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder; //Explicitly import the TitledBorder class
 import java.awt.*;
-import java.awt.event.*;
 
 public class CFTotalPanel extends JPanel {
 
@@ -19,13 +24,13 @@ public class CFTotalPanel extends JPanel {
         setBorder(border);
 
         // TextFields
-        subtotal = new StyledTextField();
-        tax = new StyledTextField();
-        total = new StyledTextField();
+        subtotal = new CFComponets.StyledTextField();
+        tax = new CFComponets.StyledTextField();
+        total = new CFComponets.StyledTextField();
 
-        JLabel subtotalLabel = new StyledLabel("Subtotal");
-        JLabel taxLabel = new StyledLabel("Tax");
-        JLabel totalLabel = new StyledLabel("Total");
+        JLabel subtotalLabel = new CFComponets.StyledLabel("Subtotal");
+        JLabel taxLabel = new CFComponets.StyledLabel("Tax");
+        JLabel totalLabel = new CFComponets.StyledLabel("Total");
 
         // Set up the panel
         setLayout(new GridLayout(3, 2));
@@ -36,46 +41,6 @@ public class CFTotalPanel extends JPanel {
         add(totalLabel);
         add(total);
 
-        // Set up the event listener for the exit button
-        JButton exit = new JButton("X");
-        exit.setBackground(CFColors.COLOR_EXIT);
-        exit.setForeground(CFColors.COLOR_TEXT);
-        exit.setBorder(new EmptyBorder(10, 10, 10, 10));
-        exit.setSize(new Dimension(50, 50));
-
-        // Set the event listener for the exit button
-        exit.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
-
-        // Place the exit button in the second column
-        GridBagConstraints c = new GridBagConstraints();
-        c.anchor = GridBagConstraints.NORTHEAST;
-        c.gridwidth = 1; // Set the width of the button
-        c.gridheight = 1; // Set the height of the button
-        c.weightx = 0.0; // Set the weight of the button
-        c.weighty = 0.0; // Set the weight of the button
-        c.insets = new Insets(0, 0, 0, 0);
-
-    }
-
-    private class StyledLabel extends JLabel {
-        public StyledLabel(String text) {
-            super(text);
-            setBackground(CFColors.COLOR_BACKGROUND);
-            setForeground(CFColors.COLOR_TEXT);
-        }
-
-    }
-
-    private class StyledTextField extends JTextField {
-        public StyledTextField() {
-            super();
-            setBackground(CFColors.COLOR_BACKGROUND);
-            setForeground(CFColors.COLOR_TEXT);
-        }
     }
 
     public void setSubtotal(double d) {

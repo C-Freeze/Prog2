@@ -1,3 +1,10 @@
+/*
+CFRoutinePanel.java
+Carter Freeze
+4/25/22
+MMMmmm, check boxes
+*/
+
 import javax.swing.*;
 import javax.swing.border.TitledBorder; //Explicitly import the TitledBorder class
 import java.awt.*;

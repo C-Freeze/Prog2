@@ -1,5 +1,9 @@
-//CFMain.java
-
+/*
+CFColors.java
+Carter Freeze
+4/25/22
+This builds the thing
+*/
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -11,17 +15,17 @@ public class CFMain extends JFrame {
     public CFMain() {
         super("Joe's Automotive"); // Set the window title
         JPanel mainPane = new JPanel();
+        setLayout(new BorderLayout());
         mainPane.setLayout(new GridLayout(1, 3));
 
         baseSetup();
         setColors(mainPane);
-        setLayout(new BorderLayout());
         mainPane.setLayout(new GridLayout(1, 3));
+        
         // create the subpanels
-        // mainPane.add(new CFTitlePanel(WIDTH, 20), BorderLayout.NORTH);
         CFRoutinePanel sp = new CFRoutinePanel(); // Routine services
-        CFRepairPanel rp = new CFRepairPanel();
-        CFTotalPanel tp = new CFTotalPanel();
+        CFRepairPanel rp = new CFRepairPanel(); // Parts and hours
+        CFTotalPanel tp = new CFTotalPanel(); // Totals
 
         JButton calcButton = new JButton("Calculate");
         calcButton.addActionListener(new ActionListener() {
@@ -42,6 +46,7 @@ public class CFMain extends JFrame {
             }
         });
 
+        //placing on the mainpane
         mainPane.add(rp);
         mainPane.add(sp);
         mainPane.add(tp);
@@ -54,8 +59,6 @@ public class CFMain extends JFrame {
         add(new CFTitlePanel(), BorderLayout.NORTH);
         add(mainPane, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
-
-        
 
         setVisible(true);
     }
@@ -70,6 +73,8 @@ public class CFMain extends JFrame {
         setResizable(false); // Set the window to not be resizable
         setUndecorated(true); // Remove the window decorations, going to use a custom one
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Set the default close operation
+        
+        //Drag feature
         FrameDragListener fdl = new FrameDragListener(this);
         addMouseListener(fdl); // This makes the window draggable
         addMouseMotionListener(fdl);

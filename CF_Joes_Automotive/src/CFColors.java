@@ -1,3 +1,10 @@
+/*
+CFColors.java
+Carter Freeze
+4/25/22
+I keep my colors here
+*/
+
 import java.awt.*;
 
 public class CFColors { //All because I'm lazy, and dont want to mess with css
